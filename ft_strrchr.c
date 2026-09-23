@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fernfern <fernfern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 14:53:21 by fernfern          #+#    #+#             */
-/*   Updated: 2026/09/23 16:39:00 by fernfern         ###   ########.fr       */
+/*   Created: 2026/09/23 16:37:57 by fernfern          #+#    #+#             */
+/*   Updated: 2026/09/23 16:38:01 by fernfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-int		ft_isalpha(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isdigit(int c);
-int		ft_isprint(int c);
+char	*ft_strrchr(const char *s, int c)
+{
+	size_t	s_len;
 
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-
-size_t	ft_strlen(const char *s);
-
-#endif
+	s_len = ft_strlen(s);
+	if ((unsigned char)c == '\0')
+		return ((char *)&s[s_len]);
+	while (s_len--)
+	{
+		if (s[s_len] == (unsigned char)c)
+			return ((char *)&s[s_len]);
+	}
+	return (0);
+}
