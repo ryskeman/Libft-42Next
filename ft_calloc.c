@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fernfern <fernfern@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 02:05:01 by fernfern          #+#    #+#             */
-/*   Updated: 2026/09/24 14:41:59 by fernfern         ###   ########.fr       */
+/*   Created: 2026/09/24 15:10:22 by fernfern          #+#    #+#             */
+/*   Updated: 2026/09/24 15:10:28 by fernfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	const unsigned char	*p;
-	unsigned char		chr;
-	size_t				i;
+	size_t	total_size;
+	void	*generic_array;
 
-	p = (const unsigned char *)s;
-	chr = (unsigned char)c;
-	i = 0;
-	while (i < n)
-	{
-		if (p[i] == chr)
-			return ((void *)(p + i));
-		i++;
-	}
-	return (NULL);
+	total_size = 0;
+	if (nmemb == 0 || size == 0)
+		total_size = 0;
+	else if (nmemb > SIZE_MAX / size)
+		return (NULL);
+	else
+		total_size = nmemb * size;
+	generic_array = malloc(total_size);
+	if (generic_array == 0)
+		return (NULL);
+	ft_memset(generic_array, 0, total_size);
+	return (generic_array);
 }
