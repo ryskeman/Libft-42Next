@@ -12,22 +12,35 @@ Building this library provides a deep understanding of memory allocation, dynami
 
 `libft` is compiled into a static library (`libft.a`) containing three main functional groups:
 
-1. **Libc Functions**: Re-implementations of standard C library functions (`ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_strlen`, `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_strlcpy`, `ft_strlcat`, `ft_toupper`, `ft_tolower`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_memchr`, `ft_memcmp`, `ft_strnstr`, `ft_atoi`, `ft_calloc`, `ft_strdup`).
-2. **Additional Functions**: Utility functions for advanced string and memory manipulation:
-   - `ft_substr`: Extracts a substring from a string.
-   - `ft_strjoin`: Concatenates two strings into a new dynamically allocated string.
-   - `ft_strtrim`: Trims specified characters from the start and end of a string.
-   - `ft_split`: Splits a string into an array of substrings using a delimiter.
-   - `ft_itoa`: Converts an integer into a string representation.
-   - `ft_strmapi` & `ft_striteri`: Apply a function to every character in a string.
-   - `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`: Write formatted output to specified file descriptors.
-3. **Linked List Functions**: Functions designed to create, modify, and traverse singly linked lists using the `t_list` structure:
-   - `ft_lstnew`: Creates a new list element.
-   - `ft_lstadd_front` & `ft_lstadd_back`: Add elements to the beginning or end of a list.
-   - `ft_lstsize`: Counts the number of elements in a list.
-   - `ft_lstlast`: Returns the last element of a list.
-   - `ft_lstdelone` & `ft_lstclear`: Delete individual elements or clear an entire list.
-   - `ft_lstiter` & `ft_lstmap`: Apply functions across elements in a list.
+### 1. Libc Functions
+Standard C library re-implementations following their respective manual pages:
+* **Character classification & conversion:** `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`.
+* **String inspection & manipulation:** `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_atoi`.
+* **Raw memory operations:** `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`.
+* **Dynamic memory allocation:** `ft_calloc`, `ft_strdup`.
+
+### 2. Additional Functions
+Utility functions for advanced string handling and file descriptor output:
+* `ft_substr`: Extracts a substring from a string.
+* `ft_strjoin`: Concatenates two strings into a newly allocated string.
+* `ft_strtrim`: Trims specified characters from the start and end of a string.
+* `ft_split`: Splits a string into an array of substrings using a delimiter.
+* `ft_itoa`: Converts an integer into its string representation.
+* `ft_strmapi`: Applies a function by index to every character in a string, creating a new string.
+* `ft_striteri`: Applies a function by index to modify characters in place.
+* `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`: Write formatted output to a specified file descriptor using `write`.
+
+### 3. Linked List Functions
+Data structures designed to manage singly linked lists using the `t_list` structure:
+* `ft_lstnew`: Creates a new list element.
+* `ft_lstadd_front`: Adds an element to the beginning of the list.
+* `ft_lstsize`: Counts the number of elements in the list.
+* `ft_lstlast`: Returns the last element of the list.
+* `ft_lstadd_back`: Adds an element to the end of the list.
+* `ft_lstdelone`: Frees a node's content using a provided delete function and frees the node itself.
+* `ft_lstclear`: Deletes and frees an entire list.
+* `ft_lstiter`: Applies a function across elements in the list.
+* `ft_lstmap`: Creates a new list resulting from applying a function to each node.
 
 ## Instructions
 
@@ -86,22 +99,35 @@ La construcción de esta librería permite comprender a fondo la asignación de 
 
 `libft` se compila como una librería estática (`libft.a`) que contiene tres grupos funcionales principales:
 
-1. **Funciones de la Libc**: Reimplementaciones de funciones estándar de la librería de C (`ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_strlen`, `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_strlcpy`, `ft_strlcat`, `ft_toupper`, `ft_tolower`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_memchr`, `ft_memcmp`, `ft_strnstr`, `ft_atoi`, `ft_calloc`, `ft_strdup`).
-2. **Funciones adicionales**: Funciones de utilidad para la manipulación avanzada de cadenas y memoria:
-   - `ft_substr`: Extrae una subcadena de una cadena dada.
-   - `ft_strjoin`: Concatena dos cadenas en una nueva cadena asignada dinámicamente.
-   - `ft_strtrim`: Elimina caracteres específicos del principio y del final de una cadena.
-   - `ft_split`: Divide una cadena en un array de subcadenas utilizando un delimitador.
-   - `ft_itoa`: Convierte un número entero a su representación en cadena de texto.
-   - `ft_strmapi` y `ft_striteri`: Aplican una función a cada carácter de una cadena.
-   - `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`: Escriben salida formateada en un descriptor de archivo específico.
-3. **Funciones de listas enlazadas**: Funciones diseñadas para crear, modificar y recorrer listas simplemente enlazadas mediante la estructura `t_list`:
-   - `ft_lstnew`: Crea un nuevo elemento para la lista.
-   - `ft_lstadd_front` y `ft_lstadd_back`: Añaden elementos al principio o al final de una lista.
-   - `ft_lstsize`: Cuenta el número de elementos de una lista.
-   - `ft_lstlast`: Devuelve el último elemento de una lista.
-   - `ft_lstdelone` y `ft_lstclear`: Eliminan elementos individuales o limpian una lista completa.
-   - `ft_lstiter` y `ft_lstmap`: Aplican funciones a lo largo de los elementos de una lista.
+### 1. Funciones de la Libc
+Reimplementaciones de la librería estándar de C siguiendo sus respectivas páginas de manual:
+* **Clasificación y conversión de caracteres:** `ft_isalpha`, `ft_isdigit`, `ft_isalnum`, `ft_isascii`, `ft_isprint`, `ft_toupper`, `ft_tolower`.
+* **Inspección y manipulación de cadenas:** `ft_strlen`, `ft_strlcpy`, `ft_strlcat`, `ft_strchr`, `ft_strrchr`, `ft_strncmp`, `ft_strnstr`, `ft_atoi`.
+* **Operaciones de memoria en bruto:** `ft_memset`, `ft_bzero`, `ft_memcpy`, `ft_memmove`, `ft_memchr`, `ft_memcmp`.
+* **Asignación dinámica de memoria:** `ft_calloc`, `ft_strdup`.
+
+### 2. Funciones adicionales
+Funciones de utilidad para la manipulación avanzada de cadenas y salida por descriptor de archivo:
+* `ft_substr`: Extrae una subcadena de una cadena dada.
+* `ft_strjoin`: Concatena dos cadenas en una nueva cadena asignada dinámicamente.
+* `ft_strtrim`: Elimina caracteres específicos del principio y del final de una cadena.
+* `ft_split`: Divide una cadena en un array de subcadenas utilizando un delimitador.
+* `ft_itoa`: Convierte un número entero a su representación en cadena de texto.
+* `ft_strmapi`: Aplica una función por índice a cada carácter de una cadena, creando una nueva cadena.
+* `ft_striteri`: Aplica una función por índice para modificar caracteres in situ (*in place*).
+* `ft_putchar_fd`, `ft_putstr_fd`, `ft_putendl_fd`, `ft_putnbr_fd`: Escriben salida formateada en un descriptor de archivo especificado mediante `write`.
+
+### 3. Funciones de listas enlazadas
+Estructuras de datos diseñadas para manejar listas simplemente enlazadas utilizando la estructura `t_list`:
+* `ft_lstnew`: Crea un nuevo elemento para la lista.
+* `ft_lstadd_front`: Añade un elemento al principio de la lista.
+* `ft_lstsize`: Cuenta el número de elementos de la lista.
+* `ft_lstlast`: Devuelve el último elemento de la lista.
+* `ft_lstadd_back`: Añade un elemento al final de la lista.
+* `ft_lstdelone`: Libera el contenido de un nodo utilizando una función de borrado proporcionada y libera el nodo en sí.
+* `ft_lstclear`: Elimina y libera una lista completa.
+* `ft_lstiter`: Aplica una función a lo largo de los elementos de la lista.
+* `ft_lstmap`: Crea una nueva lista resultante de aplicar una función a cada nodo.
 
 ## Instrucciones
 
